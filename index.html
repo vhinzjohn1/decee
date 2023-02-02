@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+</head>
+<body>
+    <button id="promptButton" class="btn1"> Show Text </button>
+
+    <div id="promptContainer" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid black;">
+      <p id="promptText"></p>
+      <button id="nextButton" class="btn2">Next</button>
+    </div>
+    
+    <style>
+      #promptContainer {
+        width: 50%;
+        height: 15%;
+        border-radius: 24px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .btn2{
+        font-size: 14px;
+        border-radius: 30px;
+        position: inherit;
+        bottom: 10px;
+        right: 10%;
+      }
+      body{
+        background-image: url(bg1.jpg);
+        background-size: cover;
+      }
+      .btn1{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: black;
+    background-color: rgb(209, 186, 231);
+    font-size: 20px;
+    border-radius: 10px;
+  }
+    </style>
+    
+    <script>
+      let counter = 0;
+      const prompts = [
+        "Hello Decee 🤍",
+        "I appreciate you always being there for me.",
+        "These days, I'm incredibly happy, and I hope I can make you feel the same way too.",
+        "Despite the difficulties, my days are enjoyable and exciting because I have you.",
+        "Happy Valentine’s Day, Pretty and Cutiee.",
+      ];
+    
+      function showText() {
+        counter = 0;
+        const promptButton = document.getElementById("promptButton");
+        promptButton.style.display = "none";
+        const promptContainer = document.getElementById("promptContainer");
+        promptContainer.style.display = "block";
+        const promptText = document.getElementById("promptText");
+        promptText.innerHTML = `${prompts[counter]}`;
+      }
+    
+      function nextPrompt() {
+        if (counter >= 4) {
+          counter = 0;
+          const promptButton = document.getElementById("promptButton");
+          promptButton.style.display = "block";
+          const promptContainer = document.getElementById("promptContainer");
+          promptContainer.style.display = "none";
+        } else {
+          counter++;
+        }
+        const promptContainer = document.getElementById("promptContainer");
+        promptContainer.style.opacity = 0;
+        setTimeout(() => {
+          const promptText = document.getElementById("promptText");
+          promptText.innerHTML = `${prompts[counter]}`;
+          promptContainer.style.opacity = 1;
+        }, 500);
+      }
+    
+      const button = document.getElementById("promptButton");
+      button.addEventListener("click", showText);
+    
+      const nextButton = document.getElementById("nextButton");
+      nextButton.addEventListener("click", nextPrompt);
+    </script>
+    
+
+</body>
+</html>
