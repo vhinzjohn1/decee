@@ -15,6 +15,7 @@
     </div>
     
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
       #promptContainer {
         width: 50%;
         height: 15%;
@@ -22,6 +23,7 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+        font-family: 'EB Garamond', serif;
         align-items: center;
         justify-content: space-around;
         transition: opacity 0.5s ease-in-out;
@@ -51,11 +53,11 @@
     <script>
       let counter = 0;
       const prompts = [
-        "Hello Decee 🤍",
-        "I appreciate you always being there for me.",
+        "Hello Decee, Good morning po🤍",
+        "I really appreciate you always for being there for me.",
         "These days, I'm incredibly happy, and I hope I can make you feel the same way too.",
-        "Despite the difficulties, my days are enjoyable and exciting because I have you.",
-        "Happy Valentine’s Day, Pretty and Cutiee.",
+        "Despite the difficulties, my days are enjoyable and exciting because I have you🤍",
+        "Happy Valentine’s Day, Pretty and Cutiee.🤍",
       ];
     
       function showText() {
@@ -84,7 +86,7 @@
           const promptText = document.getElementById("promptText");
           promptText.innerHTML = `${prompts[counter]}`;
           promptContainer.style.opacity = 1;
-        }, 500);
+        }, 750);
       }
     
       const button = document.getElementById("promptButton");
