@@ -10,7 +10,7 @@
     <button id="promptButton" class="btn1">See Message</button>
 
     <div id="promptContainer" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.493); padding: 15px; border: 1px solid black;">
-      <p id="promptText"></p>
+      <p id="promptText" class="text1"></p>
       <button id="nextButton" class="btn2">Next</button>
     </div>
     
@@ -20,7 +20,7 @@
         width: 50%;
         color: rgb(255, 255, 255);
         box-shadow: 3px 3px 3px black;
-        height: 15%;
+        height: 18%;
         border-radius: 24px;
         text-align: center;
         display: flex;
@@ -29,6 +29,9 @@
         align-items: center;
         justify-content: space-around;
         transition: opacity 0.5s ease-in-out;
+      }
+      .text1{
+        text-align: center;
       }
       .btn2{
         font-size: 14px;
@@ -50,17 +53,21 @@
     font-size: 20px;
     border-radius: 10px;
   }
+  
     </style>
     
     <script>
+      
       let counter = 0;
       const prompts = [
-        "Hello Decee, Good morning po🤍",
-        "I really appreciate you for always being there for me.",
+        "Hello Decee, Good day po🤍",
+        "Thankyouu for always being there for me biyaaa🤍 ",
+        "Like pariha gaina maka motivate ayoo🥺",
         "These days, I'm incredibly happy, and I hope I can make you feel the same way too.",
-        "Despite the difficulties, my days are enjoyable and exciting because I have you🤍",
+        "My days are exciting and complete because I have you🤍",
         "Happy Valentine’s Day, Pretty and Cutiee.🤍",
       ];
+      
     
       function showText() {
         counter = 0;
@@ -73,7 +80,7 @@
       }
     
       function nextPrompt() {
-        if (counter >= 4) {
+        if (counter >= 5) {
           counter = 0;
           const promptButton = document.getElementById("promptButton");
           promptButton.style.display = "block";
@@ -96,6 +103,7 @@
     
       const nextButton = document.getElementById("nextButton");
       nextButton.addEventListener("click", nextPrompt);
+
     </script>
     
 
