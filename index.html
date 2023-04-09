@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Message</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <button id="promptButton" class="btn1">See Message</button>
@@ -13,112 +14,8 @@
     <p id="promptText" class="text1"></p>
     <button id="nextButton" class="btn2">Next</button>
   </div>
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
-    #promptContainer {
-      width: 50%;
-      margin: 0 auto;
-      text-align: center;
-      color: rgb(255, 255, 255);
-      box-shadow: 3px 3px 3px black;
-      border-radius: 24px;
-      display: flex;
-      flex-direction: column;
-      font-family: 'EB Garamond', serif;
-      align-items: center;
-      justify-content: space-around;
-      transition: opacity 0.5s ease-in-out;
-      min-height: 10vh;
-      height: auto;
-    }
-    .text1{
-      text-align: center;
-    }
-    .btn2{
-      font-size: 14px;
-      border-radius: 30px;
-      position: inherit;
-      bottom: 3px;
-      right: 5%;
-    }
-    body{
-      background-image: url(bg1.jpg);
-      background-size: cover;
-    }
-    .btn1{
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      color: rgb(27, 16, 16);
-      background-color: rgb(233, 224, 241);
-      font-size: 20px;
-      border-radius: 10px;
-      box-shadow: 3px 3px 3px black;
-    }
 
-  </style>
-  
-  <script>
-    
-    let counter = 0;
-    const prompts = [
-      "Hi Ashh🤍",
-      "Just wanted to brighten up your day with a little greetings from me🤍",
-      "Goodmorning🤍 Have a Great Day ahead ashhh🤍",
-    ];
-      
-    
-    function showText() {
-      counter = 0;
-      const promptButton = document.getElementById("promptButton");
-      promptButton.style.display = "none";
-      const promptContainer = document.getElementById("promptContainer");
-      promptContainer.style.opacity = 0;
-      promptContainer.style.display = "block";
-      const promptText = document.getElementById("promptText");
-      promptText.innerHTML = `${prompts[counter]}`;
-      let opacity = 0;
-      const interval = setInterval(() => {
-        opacity += 0.3;
-        promptContainer.style.opacity = opacity;
-        if (opacity >= 1) {
-          clearInterval(interval);
-        }
-      }, 50);
-    }
-
-    
-    function nextPrompt() {
-      if (counter >= 2) {
-        const promptContainer = document.getElementById("promptContainer");
-        promptContainer.style.opacity = 0;
-        setTimeout(() => {
-          counter = 0;
-          const promptButton = document.getElementById("promptButton");
-          promptButton.style.display = "block";
-          promptContainer.style.display = "none";
-          promptContainer.style.opacity = 1;
-        }, 750);
-      } else {
-        counter++;
-        const promptContainer = document.getElementById("promptContainer");
-        promptContainer.style.opacity = 0;
-        setTimeout(() => {
-          const promptText = document.getElementById("promptText");
-          promptText.innerHTML = `${prompts[counter]}`;
-          promptContainer.style.opacity = 1;
-        }, 750);
-      }
-    }
-
-      const button = document.getElementById("promptButton");
-      button.addEventListener("click", showText);
-    
-      const nextButton = document.getElementById("nextButton");
-      nextButton.addEventListener("click", nextPrompt);
-
-    </script>
+  <script src="app.js"></script>
     
 
 </body>
