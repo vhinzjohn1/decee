@@ -1,9 +1,11 @@
 let counter = 0;
     const prompts = [
-    "Hi Ashh🤍",
-    "Just wanted to brighten up your day with some greetings from me🤍",
-    "You always brighten up my day, and I hope your day is as awesome as you are🤍",
-    "Ready to start the day with a smile? Goodmorniggg baby girl🤍",
+    // Jeje days comment lang muna 
+        
+    //"Hi Ashh🤍",
+    //"Just wanted to brighten up your day with some greetings from me🤍",
+    //"You always brighten up my day, and I hope your day is as awesome as you are🤍",
+    //"Ready to start the day with a smile? Goodmorniggg baby girl🤍",
     ];
     
     function showText() {
